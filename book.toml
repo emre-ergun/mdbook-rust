@@ -3,7 +3,7 @@ authors = ["Emre Ergun"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Rust Explained"
+title = "Rust Book - A Collection of Notes"
 
 [output.html]
 git-repository-url="https://github.com/emre-ergun/mdbook-rust"

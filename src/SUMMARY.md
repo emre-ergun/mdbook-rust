@@ -1,6 +1,6 @@
 # Summary
 
-[**Rust Explained**](README.md)
+[**Rust Book - A Collection of Notes**](README.md)
 
 - [A. WORKSPACE](./workspace.md)
 - [B. APP NOTES](./app-notes.md)
