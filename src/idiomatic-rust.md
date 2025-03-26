@@ -78,3 +78,37 @@ fn main() {
 1. Initial value: `Vec::new()` is the starting value for `acc`. Here it creates `acc: Vec<&i32>`
 2. `acc` is the accumulator which caries the result so for
 3. `number` is the current item of the iterator.
+
+### Usage of `windows` in chain
+
+```rust
+fn main() {
+    let numbers = vec![1, 2, 3, 4, 5, 6];
+
+    let numbers = numbers
+        .windows(2)
+        .map(|numbers| numbers[0] + numbers[1])
+        .collect::<Vec<i32>>();
+
+    println!("Combined array: {:?}", numbers);
+}
+```
+
+`windows(n)`: creates a sliding window over the vector, giving you overlapping slices of size `n`.
+In our example windows(2) creates slices like `&[1, 2], &[2, 3], &[3, 4], &[4, 5], &[5, 6]`
+
+### Range based iteration
+
+```rust
+fn main() {
+    let output_size = 10;
+
+    let numbers: Vec<i32> = (0..output_size).map(|_| 5).collect();
+
+    println!("range based array: {:?}", numbers);
+}
+```
+
+Here in this example `(0..output_size)` creates a range which is iterable and output\*size is excluded.
+`(0..=10)` means 10 is included to the range.
+`|_|`, also known as toilet closure, is a function which accepts an argument it doesn't care about.
