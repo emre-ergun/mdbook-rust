@@ -1,7 +1,5 @@
 # Idiomatic Rust Examples
 
-## Combinators
-
 ### Usage of `iter`, `map`, `collect` together
 
 ```rust
