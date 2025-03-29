@@ -2,14 +2,15 @@
 
 ---
 
-[**Rust Book - A Collection of Notes**](./README.md)
+[**Rust Book - A Collection or Notes**](./README.md)
 
 ---
 
 # Part 1: Basics of Rust
 
-- [1. Basic]()
-- [2. Structure]()
+- [1. Core Concepts](./core-concepts/README.md)
+  - [1.1 Ownership](./core-concepts/ownership.md)
+  - [1.2 Borrowing](./core-concepts/borrowing.md)
 
 # Appendix
 
