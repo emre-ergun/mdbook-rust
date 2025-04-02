@@ -2,7 +2,7 @@
 
 ---
 
-[**Rust Book - A Collection or Notes**](./README.md)
+[**Rust Book - A Collection of Notes**](./README.md)
 
 ---
 
