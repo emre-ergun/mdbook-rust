@@ -1,4 +1,4 @@
-# 1.9 Concurrency
+# 2.9 Concurrency
 
 - Threads have their own stack memory but they share heap memory with other threads in the same process.
 - Job of the scheduler is to make sure that each thread gets execution time and the way it does that is through preemptive scheduling. Each threads get a small amount of time to execute. Once that time is over, execution on that thread stops and another thread is scheduled in its place. This process of switching threads is called **context switching.**

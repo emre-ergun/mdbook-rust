@@ -1,4 +1,4 @@
-# 1.8 Closures
+# 2.8 Closures
 
 - Closures are anonymous functions which you can store in variables or pass as argument to other function.
 - Closures can capture variables in the scope which they are defined

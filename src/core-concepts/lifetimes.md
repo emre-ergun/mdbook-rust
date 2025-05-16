@@ -1,4 +1,4 @@
-# 1.6 Lifetimes
+# 2.6 Lifetimes
 
 ## Concrete Lifetime
 

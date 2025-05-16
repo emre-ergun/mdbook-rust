@@ -1,4 +1,4 @@
-# 1.1 Ownership
+# 2.1 Ownership
 
 Ownership is a strategy for managing memory(and other resources) through a set of rules checked at compile time.
 

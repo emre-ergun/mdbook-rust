@@ -1,4 +1,4 @@
-# 1.5 Traits
+# 2.5 Traits
 
 A trait defines the functionality a particular type has and can share with other types. We can use traits to define shared behavior in an abstract way. We can use trait bounds to specify that a generic type can be any type that has certain behavior.
 
@@ -12,7 +12,7 @@ trait Park {
 }
 
 trait Paint {
-		// default implemention in trait
+	// default implemention in trait
     fn paint(&self, color: String) {
         println!("Painting object: {}", color);
     }

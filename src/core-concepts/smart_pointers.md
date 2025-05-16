@@ -1,4 +1,4 @@
-# 1.7 Smart Pointers
+# 2.7 Smart Pointers
 
 ## Box Smart Pointer
 

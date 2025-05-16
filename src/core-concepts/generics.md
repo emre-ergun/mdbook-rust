@@ -1,4 +1,4 @@
-# 1.4 Generics
+# 2.4 Generics
 
 We use generics to create definitions for items like function signatures or structs, which we can then use with many different concrete data types.
 
