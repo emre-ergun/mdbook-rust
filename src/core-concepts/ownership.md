@@ -8,7 +8,7 @@ Ownership is a strategy for managing memory(and other resources) through a set o
 2. There can only be one owner at a time.
 3. When the owner goes out of scope, the vaule will be dropped.
 
-## Which Proplems Ownership solves
+## Which Proplems Ownership solves?
 
 1. Memory/Resource Leaks
 2. Double free
@@ -48,8 +48,9 @@ fn main() {
 
 > ℹ️ INFO
 >
-> Ownership is not being moved for primitive types.
-> Because clone of the value is cheap for primitive types, they are stored in the stack memory area.
+> Ownership is not being moved for primitive types. In Rust, primitives that are entirely stored on the stack, such as integers, floating point numbers, booleans, or characters are cloned by default.
+>
+> These types are cheap to clone. So there is no material difference between cloning and moving the values.
 
 ### 3. Ownership Moved to an Argument of the Function
 
