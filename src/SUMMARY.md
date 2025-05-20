@@ -8,7 +8,8 @@
 
 # Part 1: Basics of Rust
 
-- [1.1 Variables, Data Types, and Constants](./basics/vars-datatypes-constants.md)
+- [1.1 Variables, Data Types, Constants](./basics/vars-datatypes-constants.md)
+- [1.2 Functions, Control Flow, Comments](./basics/funcs-controlflow-comments.md)
 
 # Part 2: Core Concepts of Rust
 

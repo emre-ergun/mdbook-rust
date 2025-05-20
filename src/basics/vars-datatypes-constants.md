@@ -1,4 +1,4 @@
-# 1.1 Varibles, Data Types, and Constants
+# 1.1 Varibles, Data Types, Constants
 
 ## Variables
 
