@@ -12,7 +12,7 @@ trait Park {
 }
 
 trait Paint {
-	// default implemention in trait
+    // default implemention in trait
     fn paint(&self, color: String) {
         println!("Painting object: {}", color);
     }
@@ -112,6 +112,11 @@ trait Paint {
 
 trait Vehicle: Paint + AnotherTrait {
     fn park(&self);
+
+    // Traits can have associated functions
+    fn get_default_color() -> String {
+        "black".to_owned()
+    }
 }
 ```
 

@@ -6,12 +6,12 @@
 
 ---
 
-# Part 1: Basics of Rust
+# Part 1: Basics
 
 - [1.1 Variables, Data Types, Constants](./basics/vars-datatypes-constants.md)
 - [1.2 Functions, Control Flow, Comments](./basics/funcs-controlflow-comments.md)
 
-# Part 2: Core Concepts of Rust
+# Part 2: Core Concepts
 
 - [2.1 Ownership](./core-concepts/ownership.md)
 - [2.2 Borrowing](./core-concepts/borrowing.md)
@@ -20,9 +20,13 @@
 - [2.5 Traits](./core-concepts/traits.md)
 - [2.6 Lifetimes](./core-concepts/lifetimes.md)
 - [2.7 Smart Pointers](./core-concepts/smart_pointers.md)
-- [2.8 Closures](./core-concepts/closures.md)
-- [2.9 Concurrency](./core-concepts/concurrency.md)
-- [2.10 Unsafe Rust and FFI](./core-concepts/unsafe_ffi.md)
+- [2.8 Error Handling](./core-concepts/error-handling.md)
+- [2.9 Functional Features](./core-concepts/functional-features.md)
+
+# Part 3: Advanced Concepts
+
+- [3.1 Concurrency](./advanced-concepts/concurrency.md)
+- [3.2 Unsafe Rust and FFI](./advanced-concepts/unsafe_ffi.md)
 
 # Appendix
 

@@ -1,4 +1,4 @@
-# 2.10 Unsafe Rust and FFI
+# 3.2 Unsafe Rust and FFI
 
 ## Unsafe Rust
 
