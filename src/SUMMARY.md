@@ -26,7 +26,8 @@
 # Part 3: Advanced Concepts
 
 - [3.1 Concurrency](./advanced-concepts/concurrency.md)
-- [3.2 Unsafe Rust and FFI](./advanced-concepts/unsafe_ffi.md)
+- [3.2 Macro System](./advanced-concepts/macro-system.md)
+- [3.3 Unsafe Rust and FFI](./advanced-concepts/unsafe_ffi.md)
 
 # Appendix
 

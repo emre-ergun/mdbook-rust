@@ -5,11 +5,11 @@
 - **Preemptive scheduling** means that the scheduler can stop executing a thread at any given point. The programmer has no control over this.
 - **Cooperative scheduling** means that programmer can decide when to pause a task to allow other tasks to execute.
 - Concurrency:
-  - When different parts of your program **execute independently**.
-  - Time Slicing:
-    - Execution of these parts is interleaved on a single core.
-  - Parallel Execution:
-    - Execution of these parts happens at the same time using multiple cores.
+  - When different parts of your program **execute independently**. This could be done by:
+    - Time Slicing:
+      - Execution of these parts is interleaved on a single core.
+    - Parallel Execution:
+      - Execution of these parts happens at the same time using multiple cores.
 - Concurrency Models:
   - OS Threads (in Rust)
     - A basic concurrency primitive provided by the operating system
@@ -30,28 +30,66 @@
 | Ideal for small amount of CPU-bound workloads | Ideal for large amount of IO-bound workloads |
 | Harder to reason about                        | Easier to reason about                       |
 
+## Creating Threads
+
+```rust
+use std::thread;
+use std::time::Duration;
+
+fn main() {
+    let s = "Hello Rust World!".to_owned();
+
+    // here move keyword used to capture variables from the environment
+    let handle = thread::spawn(move || {
+        prinln!("{s}");
+
+        for i in 0..10 {
+            println!("Spawned thread: {i}");
+            thread::sleep(Duration::from_milis(200));
+        }
+    });
+
+    for i in 0..10 {
+        println!("Main thread: {i}");
+        thread::sleep(Duration::from_milis(200));
+    }
+
+    // Used to make main thread wait until the spawned thread will be executed
+    handle.join().unwrap();
+}
+```
+
 ## Multi Producer Single Consumer (mpsc)
 
 ```rust
-use std::{
-    sync::mpsc,
-    thread
-};
+use std::sync::mpsc;
+use std::thread;
 
-let (tx, rx) = mpsc::channel();
+fn main() {
+    let sentences = vec![
+        "Hello".to_owned(),
+        "Rust".to_owned(),
+        "World!".to_owned(),
+    ];
+    let (tx, rx) = mpsc::channel();
 
-for sentence in sentences {
-    let tx = tx.clone();
-    thread::spawn(move || {
-        let sentence: String = sentence.chars().rev().collect();
-        tx.send(sentence).unwrap();
-    });
-}
+    for sentence in sentences {
+        let tx = tx.clone();
+        thread::spawn(move || {
+            let sentence: String = sentence.chars().rev().collect();
+            tx.send(sentence).unwrap();
+        });
+    }
 
-drop(tx);
+    // The receiver of the channel will stop listening for messages
+    // until all transmitters are dropped.
+    // Because we are using clones of the transmitter, we have to manually drop
+    // the transmitter cloned.
+    drop(tx);
 
-for received in rx {
-    println!("Got: {}", received);
+    for received in rx {
+        println!("Got: {}", received);
+    }
 }
 ```
 
@@ -134,14 +172,24 @@ fn main() {
 ## async & await
 
 - async function is simply a function which returns something that implements the Future trait.
-- async / .await is special syntax which allows us to write functions, closures, and blocks that can pause execution and yield control back to the runtime allowing other code to make progress, and pick back up from where they left off.
-- One advantage of the async / .await syntax is that it allows us to write asynchronous code, which looks like synchronous code.
+- `async` / `.await` is special syntax which allows us to write functions, closures, and blocks that can pause execution and yield control back to the runtime allowing other code to make progress, and pick back up from where they left off.
+- One advantage of the `async` / `.await` syntax is that it allows us to write asynchronous code, which looks like synchronous code.
 - In Rust, Futures are lazy, meaning that they won’t do anything unless they are driven to completion by being polled. This allows Futures to be a zero cost abstraction.
 - Futures could be driven to completion by either awaiting the future or giving it to an executor.
-- .await keyword is only used if the function in which the keyword used is async function.
+- `.await` keyword is only used if the function in which the keyword used is async function.
 - Futures could be driven to completion in two ways, either calling await on the future or manually polling the future until it’s complete.
 
-## Runtime or Executer
+### Runtime or Executer
 
 - A runtime is responsible polling the top level futures and running them till completion. It’s also responsible for running multiple futures in parallel.
 - Rust standard library does not provide an async runtime. Most popular community built runtime is called as “tokio”.
+
+Here is the comparison between std::thread::spawn vs. tokio::spawn
+
+| Feature        | `std::thread::spawn`     | `tokio::spawn`                   |
+| -------------- | ------------------------ | -------------------------------- |
+| Runtime needed | ❌ No                    | ✅ Yes (Tokio runtime)           |
+| Blocking       | ✅ Yes                   | ❌ No (non-blocking)             |
+| Stack size     | Large (OS thread)        | Small (uses async stack)         |
+| Use for        | CPU-heavy, blocking work | IO-heavy, concurrent async tasks |
+| Return type    | `JoinHandle<T>`          | `JoinHandle<T>` (async `.await`) |
