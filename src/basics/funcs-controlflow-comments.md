@@ -2,20 +2,21 @@
 
 ℹ️ **Rust coding rules suggestions:**
 
-| Item Type         | Case Style             | Example           |
-| ----------------- | ---------------------- | ----------------- |
-| **Variables**     | `snake_case`           | `my_variable`     |
-| **Functions**     | `snake_case`           | `calculate_sum()` |
-| **Structs**       | `PascalCase`           | `MyStruct`        |
-| **Enums**         | `PascalCase`           | `MyEnum`          |
-| **Enum Variants** | `PascalCase`           | `SomeVariant`     |
-| **Constants**     | `SCREAMING_SNAKE_CASE` | `MAX_LIMIT`       |
-| **Statics**       | `SCREAMING_SNAKE_CASE` | `MAX_LIMIT`       |
-| **Modules**       | `snake_case`           | `my_module`       |
-| **Crates**        | `snake_case`           | `my_crate`        |
-| **Traits**        | `PascalCase`           | `Display`         |
-| **Type Aliases**  | `PascalCase`           | `MyType`          |
-| **Lifetimes**     | `lowercase with` `'`   | `'a`, `'static`   |
+| Item Type         | Case Style                   | Example                      |
+| ----------------- | ---------------------------- | ---------------------------- |
+| **Project Name**  | `snake_case` or `kebab-case` | `my_project` or `my-project` |
+| **Variables**     | `snake_case`                 | `my_variable`                |
+| **Functions**     | `snake_case`                 | `calculate_sum()`            |
+| **Structs**       | `PascalCase`                 | `MyStruct`                   |
+| **Enums**         | `PascalCase`                 | `MyEnum`                     |
+| **Enum Variants** | `PascalCase`                 | `SomeVariant`                |
+| **Constants**     | `SCREAMING_SNAKE_CASE`       | `MAX_LIMIT`                  |
+| **Statics**       | `SCREAMING_SNAKE_CASE`       | `MAX_LIMIT`                  |
+| **Modules**       | `snake_case`                 | `my_module`                  |
+| **Crates**        | `snake_case`                 | `my_crate`                   |
+| **Traits**        | `PascalCase`                 | `Display`                    |
+| **Type Aliases**  | `PascalCase`                 | `MyType`                     |
+| **Lifetimes**     | `lowercase with` `'`         | `'a`, `'static`              |
 
 ## Functions
 
