@@ -5,9 +5,13 @@ multilingual = false
 src = "src"
 title = "Rust Book - A Collection of Notes"
 
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
 [output.html]
 git-repository-url="https://github.com/emre-ergun/mdbook-rust"
 no-section-label=true
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [output.html.playground]
 runnable = false
