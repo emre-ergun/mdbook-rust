@@ -147,7 +147,7 @@ fn main() {
 }
 ```
 
-Mathc Expression:
+Match Expression:
 
 1. It should cover all branches.
 2. `_` can be used to cover rest of branches.
@@ -165,7 +165,7 @@ enum Option<T> {
 
 fn main() {
     // if-let syntax is Rust-based feature
-    // and it is useful pattern if you dont want to
+    // and it is useful pattern if you don't want to
     // implement None branch with `match` pattern
     if let Some(value) = username {
         println!("username: {value}");

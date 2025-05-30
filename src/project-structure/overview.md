@@ -75,7 +75,7 @@ A tree of modules that produce a library or execute.
 - Contain items (functions, structs, enums, traits, etc.)
 - Explicitly defined (using the mod keyword)
   - Not mapped to the filesystem
-  - Flexibility and straight forward conditional compilataion.
+  - Flexibility and straight forward conditional compilation.
 
 > ℹ️**Info**
 >

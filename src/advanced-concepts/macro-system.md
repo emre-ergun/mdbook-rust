@@ -9,7 +9,7 @@
 
 ## Compilation process
 
-You can think of compilation as a big function where the input parameter is your source code, and the return value is an executable. Inside the big function there are smaller functions that analyze and process your code. The first three steps of the compilation process are `Lexical`, `Syntax`, and `Semantic` analysises as you see below in the diagram.
+You can think of compilation as a big function where the input parameter is your source code, and the return value is an executable. Inside the big function there are smaller functions that analyze and process your code. The first three steps of the compilation process are `Lexical`, `Syntax`, and `Semantic` analyzes as you see below in the diagram.
 
 ```mermaid
 graph LR;
@@ -30,13 +30,13 @@ We will focus on first three steps of compilation process to understand macro sy
 
 - From the perspective of the compiler, your source code starts off as a meaningless text file. The job of the lexical analysis is to turn this meaningless text into a stream of tokens, and then classify the tokens.
 - Tokens can be grouped into several categories:
-  - Indentifiers
+  - Identifiers
   - Literals
   - Keywords
   - Symbols
 - The stream of tokens are turned into a stream of token trees.
   - Almost all tokens are token trees themselves, specifically leaf nodes.
-  - The only non-leaf nodes are grouping tokes such as paranthesis, brackets, or curly braces.
+  - The only non-leaf nodes are grouping tokes such as parenthesis, brackets, or curly braces.
 - Macros in Rust deals with tokens and token trees.
 
 ### Syntax Analysis
@@ -70,7 +70,7 @@ It is similar to match expression.
 ///     ruleN;
 /// }
 ///
-/// (matcher) => { expensian aka transcriber }
+/// (matcher) => { expansion aka transcriber }
 
 #[macro_export] // used to export macro defined in library
 macro_rules! hello {
@@ -101,9 +101,9 @@ macro_rules! map {
     }};
     // $ (...) sep rep
     // rep operators:
-    // * : zero or more repetations
-    // ? : at most one repetation
-    // + : one or more repetations
+    // * : zero or more repetitions
+    // ? : at most one repetition
+    // + : one or more repetitions
     // sep operators must be `=>`, `,` , `;`
     ($($key: expr => $val: expr),*) => {{
         let mut map = HashMap::new();
@@ -397,21 +397,21 @@ fn extract_arg_names(func: &ItemFn) -> Vec<&Ident> {
 }
 
 fn generate_verbose_logs(fn_name: &Ident, fn_args: Vec<&Ident>) -> Vec<Stmt> {
-    let mut statemens = vec![parse_quote!({
+    let mut statements = vec![parse_quote!({
         print!("[Info] calling {} | ", stringify!(#fn_name));
     })];
 
     for arg in fn_args {
-        statemens.push(parse_quote!({
+        statements.push(parse_quote!({
             print!("{} = {:?} ", stringify!(#arg), #arg);
         }));
     }
 
-    statemens.push(parse_quote!({
+    statements.push(parse_quote!({
         println!();
     }));
 
-    statemens
+    statements
 }
 
 // main.rs
@@ -426,7 +426,7 @@ struct Product {
 
 fn main() {
     let laptop = Product {
-        name: "Macbook Pro".to_owned(),
+        name: "MacBook Pro".to_owned(),
         price: 2000,
     };
 

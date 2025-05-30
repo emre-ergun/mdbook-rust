@@ -12,7 +12,7 @@ trait Park {
 }
 
 trait Paint {
-    // default implemention in trait
+    // default implementation in trait
     fn paint(&self, color: String) {
         println!("Painting object: {}", color);
     }
@@ -34,7 +34,7 @@ impl Park for Car {
     }
 }
 
-// no need to implement the paint function because of default implementaion
+// no need to implement the paint function because of default implementation
 // in the trait
 impl Paint for Car {}
 

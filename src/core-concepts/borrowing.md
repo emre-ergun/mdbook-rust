@@ -2,7 +2,7 @@
 
 The act of creating a reference.
 
-- References are pointers with rules/restrictrions
+- References are pointers with rules/restrictions
 - References do not take ownership.
 
 Why borrow?
@@ -42,7 +42,7 @@ fn print_string(p1: &String) {
 
 ### 2. Mutable Reference
 
-Here in the example mutable and immutable references are used together. Normally it violates the first borrowing rules. But Rust borrow checker is samrt enough to understand that immutable reference is used before the mutable reference. This is a feature in rust called non-lexical lifetimes.
+Here in the example mutable and immutable references are used together. Normally it violates the first borrowing rules. But Rust borrow checker is smart enough to understand that immutable reference is used before the mutable reference. This is a feature in rust called non-lexical lifetimes.
 
 ```rust
 fn main() {
@@ -66,3 +66,13 @@ fn print_string(p1: &String) {
     println!("String in function: {p1}");
 }
 ```
+
+## Borrow Checker
+
+The borrow checker is part of Rust's compiler that ensures that references are always valid. It is tasked with enforcing of a number of properties:
+
+- All variables must be initialized before used.
+- You can't move same value twice.
+- You can't move a value while it is borrowed.
+
+So it checks to see that there is no ambiguity in the code that would point to an invalid reference in memory.

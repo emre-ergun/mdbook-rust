@@ -1,4 +1,4 @@
-# 1.1 Varibles, Data Types, Constants
+# 1.2 Variables, Data Types, Constants
 
 ## Variables
 
@@ -11,7 +11,7 @@ fn main() {
     //   ^ here type is annotated implicitly
     let b: i16 = 10;
     //    ^^^^ here type is explicitly annotated as i16.
-    // if we try to assing 5.0 float point to b, it will
+    // if we try to assign 5.0 float point to b, it will
     // be an error because of type annotation.
 
     // mutability
@@ -80,7 +80,7 @@ fn main() {
     let s1 = t2.2; // reach the any element by "variable.<index>"
     let (i1: i32, f1: f64, s1: &str) = t2; // the tuple can also be destructured
 
-    let t1 = (); // empty tuple is the special tuple typle called "unit type"
+    let t1 = (); // empty tuple is the special tuple type called "unit type"
 
 
     // Type Aliasing
@@ -93,7 +93,7 @@ fn main() {
 
 | Constant                                    | Static                             |
 | ------------------------------------------- | ---------------------------------- |
-| SCREAMIN_SNAKE_CASE                         | SCREAMIN_SNAKE_CASE                |
+| SCREAMING_SNAKE_CASE                        | SCREAMING_SNAKE_CASE               |
 | Explicit type annotation                    | Explicit type annotation           |
 | Can not be mutated                          | Can be marked as mutated           |
 | Value of it will be inlined at compile time | It occupies location in the memory |
@@ -110,3 +110,18 @@ fn main() {
 
 }
 ```
+
+### Operators in Rust
+
+| **Category**      | **Operators**                           | **Description**                                 | **Example**                  |
+| ----------------- | --------------------------------------- | ----------------------------------------------- | ---------------------------- |
+| Arithmetic        | `+`, `-`, `*`, `/`, `%`                 | Basic math operations                           | `5 + 3`, `10 % 4`            |
+| Comparison        | `==`, `!=`, `<`, `>`, `<=`, `>=`        | Compare values, return `bool`                   | `a == b`, `x < y`            |
+| Logical           | `&&`, `!`                               | Boolean logic operations                        | `true && false`, `!is_valid` |
+| Bitwise           | `&`, `^`, `<<`, `>>`                    | Bit-level operations on integers                | `x & y`, `1 << 3`            |
+| Assignment        | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, etc. | Assign and update values                        | `count += 1`, `x = 42`       |
+| Reference         | `&`                                     | Borrowing (create reference)                    | `let r = &value;`            |
+| Dereference       | `*`                                     | Follow a reference to access value              | `let x = *ptr;`              |
+| Range             | `..`, `..=`                             | Range expressions (exclusive/inclusive)         | `for i in 0..5 {}`, `1..=3`  |
+| Error Propagation | `?`                                     | Return early if `Result::Err` or `Option::None` | `let v = might_fail()?;`     |
+| Casting           | `as`                                    | Type conversion                                 | `let x = y as f64;`          |

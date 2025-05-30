@@ -46,7 +46,7 @@ fn main() {
 
 ```
 
-The reason is that `mut` we've just introduced appears in so-colled binding position.
+The reason is that `mut` we've just introduced appears in so-called binding position.
 
 ```rust
 fn foo_1(items: &[f32]) {

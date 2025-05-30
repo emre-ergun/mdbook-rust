@@ -33,6 +33,14 @@ fn first_turn2(_p1: &str, _p2: &str) -> &'static str {
 
 ### Struct and Life time Elision
 
+Basically, when it is evident that we want certain lifetimes to be available, the compiler can do that for us automatically. It has some rules as we listed below:
+
+- Rust compiler follows three lifetime elision rules:
+
+  - Each parameter that is a reference gets its own lifetime parameter
+  - If there is only one input lifetime parameter, that lifetime is assigned to all output lifetime parameters
+  - If there are multiple input lifetime parameters, but one of them &self or &mut self, the lifetime of self is assigned to all output lifetime parameters
+
 - When storing references in struct we must add a generic lifetime annotation.
 
 ```rust
@@ -41,8 +49,3 @@ fn take_and_return_content(content: &str) -> &str {
     content
 }
 ```
-
-- Rust compiler follows three lifetime elision rules:
-  - Each parameter that is a reference gets its own lifetime parameter
-  - If there is only one input lifetime parameter, that lifetime is assigned to all output lifetime parameters
-  - If there are multiple input lifetime parameters, but one of them &self or &mut self, the lifetime of self is assigned to all output lifetime parameters

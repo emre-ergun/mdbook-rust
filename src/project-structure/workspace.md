@@ -59,6 +59,6 @@ crate-type = ["cdylib"]
 rand = "0.8.5"
 getrandom = { version = "0.2.15", features = ["js"] }
 wasm-bindgen = "0.2.100"
-# a lib from the same worksapce to use it another library
+# a lib from the same workspace to use it another library
 lib-a = { path = "../lib-a/" }
 ```

@@ -1,4 +1,4 @@
-# 1.2 Functions, Control Flow, Comments
+# 1.3 Functions, Control Flow, Comments
 
 ℹ️ **Rust coding rules suggestions:**
 
@@ -42,7 +42,7 @@ fn function_name(parameter1: Type1, parameter2: Type2, ...) -> ReturnType {
    }
    ```
 
-2. Generic with constraits (trait bounds)
+2. Generic with constraints (trait bounds)
 
    ```rust
    fn print_value<T: std::fmt::Display>(value: T) {
@@ -80,7 +80,7 @@ fn function_name(parameter1: Type1, parameter2: Type2, ...) -> ReturnType {
 
 ## Control Flows
 
-### Conditional statemens
+### Conditional statements
 
 | Syntax                    | Description                             |
 | ------------------------- | --------------------------------------- |

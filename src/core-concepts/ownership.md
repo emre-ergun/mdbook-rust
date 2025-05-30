@@ -6,9 +6,9 @@ Ownership is a strategy for managing memory(and other resources) through a set o
 
 1. Each value in Rust has a variable that is called its owner.
 2. There can only be one owner at a time.
-3. When the owner goes out of scope, the vaule will be dropped.
+3. When the owner goes out of scope, the value will be dropped.
 
-## Which Proplems Ownership solves?
+## Which Problems Ownership solves?
 
 1. Memory/Resource Leaks
 2. Double free

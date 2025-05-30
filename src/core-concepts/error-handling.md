@@ -28,7 +28,7 @@ fn read_file() -> Result<String, std::io::Error> {
 
 - Represented by the `panic!` macro
 - Program stops execution immediately
-- Used when a bug is detected or something truly unpexpected happens.
+- Used when a bug is detected or something truly unexpected happens.
 
 ```rust
 fn divide(a: i32, b: i32) -> i32 {
@@ -55,7 +55,7 @@ pub trait Error: Debug + Display {
 }
 ```
 
-Implemention Error trait on our custom error types achieves a few things:
+Implementation Error trait on our custom error types achieves a few things:
 
 - Semantically marks types as errors
 - Standardizes
