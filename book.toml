@@ -3,7 +3,7 @@ authors = ["Emre Ergun"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Rust Book - A Collection of Notes"
+title = "Rust - A Collection of Notes"
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"

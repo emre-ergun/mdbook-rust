@@ -2,14 +2,15 @@
 
 ---
 
-[**Rust Book - A Collection of Notes**](./README.md)
+[**Rust - A Collection of Notes**](./README.md)
 
 ---
 
 # Part 1: Basics
 
-- [1.1 Variables, Data Types, Constants](./basics/vars-datatypes-constants.md)
-- [1.2 Functions, Control Flow, Comments](./basics/funcs-controlflow-comments.md)
+- [1.1 Rust Toolchain](./basics/rust-toolchain.md)
+- [1.2 Variables, Data Types, Constants](./basics/vars-datatypes-constants.md)
+- [1.3 Functions, Control Flow, Comments](./basics/funcs-controlflow-comments.md)
 
 # Part 2: Core Concepts
 
