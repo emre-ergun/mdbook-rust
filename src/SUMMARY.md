@@ -36,6 +36,7 @@
 
 - [Overview](./project-structure/overview.md)
 - [Workspace](./project-structure/workspace.md)
+- [.cargo/config.toml](./project-structure/cargo-config.md)
 
 # B. APP NOTES
 
